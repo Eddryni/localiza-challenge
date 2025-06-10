@@ -1,7 +1,7 @@
 import { IProductDetailsResponse } from "./getProductById.types";
 
 export const response: IProductDetailsResponse = {
-  id: "12345",
+  id: "1",
   title: "Sorvete A",
   image: "/next.svg",
   details: [

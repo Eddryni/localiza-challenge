@@ -32,10 +32,26 @@ export const response: IResponseData = {
       title: 'Sorvete E',
       description: '5 Litros',
     },
+    {
+      id: '6',
+      image: '/next.svg',
+      title: 'Sorvete F',
+      description: '6 Litros',
+    }, {
+      id: '7',
+      image: '/next.svg',
+      title: 'Sorvete G',
+      description: '7 Litros',
+    }, {
+      id: '8',
+      image: '/next.svg',
+      title: 'Sorvete G',
+      description: '8 Litros',
+    },
   ],
   pagination: {
     currentPage: 1,
-    pageSize: 12,
-    totalPages: 5
+    pageSize: 8,
+    totalPages: 3
   }
 }

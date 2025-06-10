@@ -1,21 +1,35 @@
 import { response } from "./getProducts.mock";
+import { IResponseData } from "./getProducts.types";
 
-export async function getProducts(query: string, page: number) {
-  try {
-    // Devido ao fato de através de muitas tentativas de fazer o endpoint funcionar e nao obter sucesso em conseguir a resposta,
-    // foi utilizado uma forma mais simples atras do mock para conseguir valores. Dessa forma deu a devida atenção ao que é 
-    // requerido pelo objetivo do desafio como informado no teste
+// Devido ao fato de através de muitas tentativas de fazer o endpoint funcionar e nao obter sucesso em conseguir a resposta,
+// foi utilizado uma forma mais simples atraves do mock para conseguir valores. Dessa forma dou a devida atenção ao que é 
+// requerido pelo objetivo do desafio.
 
-    await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}&page=${page}&pageSize=12`);
 
-    // if (!res.ok) throw new Error('Erro ao buscar produtos');
-    // return await res.json();
+// export async function getProducts(query: string, page: number) {
+//   try {
+//     const res = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}&page=${page}&pageSize=12`);
 
-    return response
+//     if (!res.ok) throw new Error('Erro ao buscar produtos');
+//     return await res.json();
 
-  } catch (error) {
-    console.error('Erro no fetchProducts:', error);
+//     return response
 
-    throw error;
+//   } catch (error) {
+//     console.error('Erro no fetchProducts:', error);
+
+//     throw error;
+//   }
+// }
+
+
+export function getProducts(_query: string, page: number): IResponseData {
+
+  return {
+    ...response,
+    pagination: {
+      ...response.pagination,
+      currentPage: page,
+    }
   }
 }
