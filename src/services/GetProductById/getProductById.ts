@@ -4,7 +4,10 @@ import { response } from "./getProductById.mock";
 // foi utilizado uma forma mais simples atraves do mock para conseguir valores. Dessa forma dou a devida atenção ao que é 
 // requerido pelo objetivo do desafio.
 
-export async function getProductById(id: string) {
- 
-  return response
+export function getProductById(id: string) {
+
+  return {
+    ...response,
+    id
+  }
 }
