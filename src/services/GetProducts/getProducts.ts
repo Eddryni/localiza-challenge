@@ -6,7 +6,8 @@ export async function getProducts(query: string, page: number) {
     // foi utilizado uma forma mais simples atras do mock para conseguir valores. Dessa forma deu a devida atenção ao que é 
     // requerido pelo objetivo do desafio como informado no teste
 
-    // const res = await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}&page=${page}&pageSize=12`);
+    await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}&page=${page}&pageSize=12`);
+
     // if (!res.ok) throw new Error('Erro ao buscar produtos');
     // return await res.json();
 
