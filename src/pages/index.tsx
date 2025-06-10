@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Box, Typography, Pagination, Grid, Paper } from '@mui/material';
 import { useState } from 'react';
 import { getProducts } from 'services';
-import { LoadingSpinner, ProductCard } from 'components';
+import { LoadingSpinner, ProductCard, SearchError } from 'components';
 import { paginationStyles } from './index.styles';
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
 
   if (isLoading) return <LoadingSpinner />;
 
-  if (error) return <Typography color="error">Erro ao carregar sorvetes.</Typography>;
+  if (error) return <SearchError />;
 
   return (
     <Box>

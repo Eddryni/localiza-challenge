@@ -52,5 +52,3 @@ export const ProductCard: React.FC<IProductCardProps> = React.memo(({ id, title,
     </Paper>
   );
 });
-
-
