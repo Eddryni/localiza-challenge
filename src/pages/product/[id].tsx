@@ -1,13 +1,29 @@
 import { InferGetServerSidePropsType } from 'next';
 import { Box, Typography, CardMedia, Container, Grid, Paper, useMediaQuery, Divider } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
-import { getProductById } from 'services';
 import { useProductPageStyles } from 'styles/productPage.styles';
 import { theme } from '@styles/theme';
-import { getServerSideProps } from '../../utils/productPage.utils';
 import { LoadingSpinner, SearchError } from 'components';
 import { Fragment } from 'react';
+import { queryClient, getProductById } from "@services/index";
+import { dehydrate } from "@tanstack/react-query";
+import { GetServerSideProps } from "next";
 
+export const getServerSideProps: GetServerSideProps<{ id: string }> = async (context) => {
+  const id = context.params?.id as string;
+
+  await queryClient.prefetchQuery({
+    queryKey: ['sorvete', id],
+    queryFn: () => getProductById(id),
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+      id,
+    },
+  };
+};
 
 export default function ProductPage({ id }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const styles = useProductPageStyles();
