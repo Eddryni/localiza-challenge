@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Box, CircularProgress, Typography, Pagination, Grid, Paper } from '@mui/material';
+import { Box, Typography, Pagination, Grid, Paper } from '@mui/material';
 import { useState } from 'react';
 import { getProducts } from 'services';
 import { LoadingSpinner, ProductCard } from 'components';

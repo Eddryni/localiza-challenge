@@ -1,5 +1,5 @@
 import { InferGetServerSidePropsType } from 'next';
-import { Box, Typography, CardMedia, Container, Grid, Paper, CircularProgress, useMediaQuery, Divider } from '@mui/material';
+import { Box, Typography, CardMedia, Container, Grid, Paper, useMediaQuery, Divider } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { getProductById } from 'services';
 import { useProductPageStyles } from './productPage.styles';
