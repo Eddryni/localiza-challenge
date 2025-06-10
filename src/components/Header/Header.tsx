@@ -71,8 +71,8 @@ export default function Header() {
         <Box sx={styles.drawer} role="presentation" onClick={() => setDrawerOpen(false)}>
           <List>
             {navItems.map(({ value, path }, index) => (
-              <ListItemButton onClick={() => router.push(path)}>
-                <ListItem key={index} >
+              <ListItemButton onClick={() => router.push(path)} key={index}>
+                <ListItem>
                   <ListItemText primary={value} />
                 </ListItem>
               </ListItemButton>
