@@ -6,7 +6,7 @@ import { IProductCardProps } from './ProductCard.types'
 import { useRouter } from 'next/router';
 
 
-export const ProductCard: React.FC<IProductCardProps> = React.memo(({ id, title, image, description }) => {
+export const ProductCard: React.FC<IProductCardProps> = React.memo(function ProductCard({ id, title, image, description }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const styles = useProductCardStyles(isMobile);
