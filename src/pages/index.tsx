@@ -3,7 +3,7 @@ import { Box, Typography, Pagination, Grid, Paper } from '@mui/material';
 import { useState } from 'react';
 import { getProducts } from 'services';
 import { LoadingSpinner, ProductCard, SearchError } from 'components';
-import { paginationStyles } from './index.styles';
+import { paginationStyles } from 'styles/homePage.styles';
 
 export default function Home() {
   const [page, setPage] = useState(1);

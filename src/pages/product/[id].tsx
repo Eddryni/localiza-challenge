@@ -2,9 +2,9 @@ import { InferGetServerSidePropsType } from 'next';
 import { Box, Typography, CardMedia, Container, Grid, Paper, useMediaQuery, Divider } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { getProductById } from 'services';
-import { useProductPageStyles } from './productPage.styles';
+import { useProductPageStyles } from 'styles/productPage.styles';
 import { theme } from '@styles/theme';
-import { getServerSideProps } from './productPage.utils';
+import { getServerSideProps } from '../../utils/productPage.utils';
 import { LoadingSpinner, SearchError } from 'components';
 import { Fragment } from 'react';
 
